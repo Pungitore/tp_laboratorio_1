@@ -44,7 +44,10 @@ int main(void) {
 	float resultadoSuma;
 	float resultadoResta;
 	float resultadoMultiplicacion;
-
+	float resultadoDivision;
+	int respuestaFactorial;
+	float resultadoFactorialUno;
+	float resultadoFactorialDos;
 	do{
 	    printf("\n1.Ingrese Primer Operando."
 	    	   "\n2.Ingrese Segundo Operando."
@@ -67,13 +70,30 @@ int main(void) {
 	        	  resultadoSuma = sumarNumeros(A,B);
 	        	  resultadoResta = restarNumeros(A,B);
 	        	  resultadoMultiplicacion = multiplicarNumeros(A,B);
+	        	  resultadoDivision = dividirNumeros(A,B);
+	        	  respuestaFactorial = factorizarNumeros(A,B,&resultadoFactorialUno,&resultadoFactorialDos);
+
 	        	  printf("Operaciones Realizadas con Exito.\n");
 	          break;
 	          case 4:
 	        	  mostrarResultadoSuma(A,B,resultadoSuma);
 	        	  mostrarResultadoResta(A,B,resultadoResta);
 	        	  mostrarResultadoMultiplicacion(A,B,resultadoMultiplicacion);
-	          break;
+
+	        	  if(B != 0){
+	        		 mostrarResultadoDivisionExito(A,B,resultadoDivision);
+	        	  }
+	        	  else
+	        	  {
+	        		 mostrarResultadoDivisionError();
+	        	  }
+
+	        	  if (respuestaFactorial==0)
+	        	 {
+	        	 printf("El factorial de %.2f es: %.2f\n El factorial de %.2f es: %.2f",A,resultadoFactorialUno,B,resultadoFactorialDos);
+	        	 }
+
+			 break;
 	      }
 
 	}while(opcion !=5);
