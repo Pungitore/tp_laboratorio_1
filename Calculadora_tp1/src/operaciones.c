@@ -49,3 +49,16 @@ float restarNumeros(float X, float Y){
 	return resultadoResta;
 }
 
+
+/** \brief Efectua la multiplicación entre dos parametros.
+* \param float X Primer parametro.
+* \param float Y Segundo parametro .
+* \return resultadoMultiplicacion retorna el resultado de los dos parametros ingresados(X,Y).
+*/
+float multiplicarNumeros(float X, float Y){
+	float resultadoMultiplicacion;
+	resultadoMultiplicacion = X * Y;
+
+	return resultadoMultiplicacion;
+}
+

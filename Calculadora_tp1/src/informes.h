@@ -10,6 +10,7 @@
 
 void mostrarResultadoSuma(float X, float Y, float parametroResutadoResta);
 void mostrarResultadoResta(float X, float Y, float parametroResutadoResta);
+void mostrarResultadoMultiplicacion(float X, float Y, float parametroResutadoMultiplicacion);
 
 
 

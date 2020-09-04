@@ -11,5 +11,6 @@
 float getFloat(char* mensaje);
 float sumarNumeros(float X, float Y);
 float restarNumeros(float X, float Y);
+float multiplicarNumeros(float X, float Y);
 
 #endif /* OPERACIONES_H_ */

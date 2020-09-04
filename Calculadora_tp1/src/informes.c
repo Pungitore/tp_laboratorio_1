@@ -17,12 +17,20 @@ void mostrarResultadoSuma(float X ,float Y ,float parametroResultadoSuma){
 	printf("El resultado de la suma entre: %.2f y %.2f es: %.2f \n\n" , X, Y, parametroResultadoSuma);
 }
 
-
 /** \brief Efectua el mensaje del resultado de la operacion resta ya realizada, con dichos parametros.
 * \param float X Primer parametro.
 * \param float Y Segundo parametro.
 */
-
 void mostrarResultadoResta(float X, float Y, float parametroResutadoResta){
 	printf("El resultado de la resta entre: %.2f y %.2f es: %.2f \n\n" , X, Y, parametroResutadoResta);
 }
+
+
+/** \brief Efectua el mensaje del resultado de la operacion multiplicación ya realizada, con dichos parametros.
+* \param float X Primer parametro.
+* \param float Y Segundo parametro.
+*/
+void mostrarResultadoMultiplicacion(float X, float Y, float parametroResutadoMultiplicacion){
+	printf("El resultado de la multiplicacion entre: %.2f y %.2f es: %.2f \n\n" , X, Y, parametroResutadoMultiplicacion);
+}
+
