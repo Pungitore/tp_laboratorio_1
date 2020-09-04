@@ -49,7 +49,7 @@ void mostrarResultadoDivisionExito(float X, float Y, float parametroResutadoMult
 * \param float Y Segundo parametro.
 */
 void mostrarResultadoDivisionError(){
-	printf("ERROR!!! No se puede dividir por 0");
+	printf("ERROR!!! No se puede dividir por 0 !!! \n");
 }
 
 

@@ -49,7 +49,7 @@ int main(void) {
 	float resultadoFactorialUno;
 	float resultadoFactorialDos;
 	do{
-	    printf("\n1.Ingrese Primer Operando."
+	    printf("\n\n1.Ingrese Primer Operando."
 	    	   "\n2.Ingrese Segundo Operando."
 	    	   "\n3.Calcular Todas Las Operaciones."
 	    	   "\n4.Informar Resultados."
