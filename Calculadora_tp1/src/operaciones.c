@@ -24,6 +24,12 @@ float getFloat(char* mensaje)
 	return bufferFloat;
 }
 
+
+/** \brief Efectua la suma entre dos parametros.
+* \param float X Primer parametro.
+* \param float Y Segundo parametro .
+* \return resultadoSuma retorna el resultado de los dos parametros ingresados(X,Y).
+*/
 float sumarNumeros(float X, float Y){
 	float resultadoSuma;
 	resultadoSuma = X + Y;
@@ -31,7 +37,15 @@ float sumarNumeros(float X, float Y){
 	return resultadoSuma;
 }
 
-void mostrarResultadoSuma(float X ,float Y ,float parametroResutadoSuma){
-	printf("El resultado de la suma entre: %.2f y %.2f es: %.2f \n\n" , X, Y, parametroResutadoSuma);
+/** \brief Efectua la resta entre dos parametros.
+* \param float X Primer parametro.
+* \param float Y Segundo parametro .
+* \return resultadoResta retorna el resultado de los dos parametros ingresados(X,Y).
+*/
+float restarNumeros(float X, float Y){
+	float resultadoResta;
+	resultadoResta = X - Y;
+
+	return resultadoResta;
 }
 

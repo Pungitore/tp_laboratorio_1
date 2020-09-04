@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "operaciones.h"
-
+#include "informes.h"
 // \n
 
 int main(void) {
@@ -21,9 +21,9 @@ int main(void) {
 	float A;
 	float B;
 	float resultadoSuma;
-
+	float resultadoResta;
 	do{
-	    printf("1.Ingrese Primer Operando."
+	    printf("\n1.Ingrese Primer Operando."
 	    	   "\n2.Ingrese Segundo Operando."
 	    	   "\n3.Calcular Todas Las Operaciones."
 	    	   "\n4.Informar Resultados."
@@ -42,10 +42,12 @@ int main(void) {
 	          break;
 	          case 3:
 	        	  resultadoSuma = sumarNumeros(A,B);
+	        	  resultadoResta = restarNumeros(A,B);
 	        	  printf("Operaciones Realizadas con Exito.\n\n");
 	          break;
 	          case 4:
 	        	  mostrarResultadoSuma(A,B,resultadoSuma);
+	        	  mostrarResultadoResta(A,B,resultadoResta);
 	          break;
 	      }
 

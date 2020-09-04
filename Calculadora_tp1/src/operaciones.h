@@ -10,6 +10,6 @@
 
 float getFloat(char* mensaje);
 float sumarNumeros(float X, float Y);
-void mostrarResultadoSuma(float X, float Y, float parametroResutadoSuma);
+float restarNumeros(float X, float Y);
 
 #endif /* OPERACIONES_H_ */
