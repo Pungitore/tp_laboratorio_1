@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "operaciones.h"
 
 // \n
 
@@ -17,6 +18,8 @@ int main(void) {
 	setbuf(stdout,NULL);
 
 	int opcion;
+	float A;
+	float B;
 
 	do{
 	    printf("1. Ingrese Primer Operando.\n"
@@ -28,17 +31,19 @@ int main(void) {
 	    printf("Ingrese una opción: \n");
 		scanf("%d",&opcion);
 
-		/*
+
 	      switch(opcion){
 	          case 1:
+	        	  A = getFloat("Ingrese el Primer Operando: \n");
 	          break;
 	          case 2:
+	        	  B = getFloat("Ingrese el Segundo Operando: \n");
 	          break;
 	          case 3:
 	          break;
 	          case 4:
 	          break;
-	      }*/
+	      }
 
 	}while(opcion !=5);
 
