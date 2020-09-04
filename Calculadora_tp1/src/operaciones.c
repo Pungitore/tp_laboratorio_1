@@ -24,3 +24,14 @@ float getFloat(char* mensaje)
 	return bufferFloat;
 }
 
+float sumarNumeros(float X, float Y){
+	float resultadoSuma;
+	resultadoSuma = X + Y;
+
+	return resultadoSuma;
+}
+
+void mostrarResultadoSuma(float X ,float Y ,float parametroResutadoSuma){
+	printf("El resultado de la suma entre: %.2f y %.2f es: %.2f \n\n" , X, Y, parametroResutadoSuma);
+}
+

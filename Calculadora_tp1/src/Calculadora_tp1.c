@@ -20,28 +20,32 @@ int main(void) {
 	int opcion;
 	float A;
 	float B;
+	float resultadoSuma;
 
 	do{
-	    printf("1. Ingrese Primer Operando.\n"
-	    	   "2. Ingrese Segundo Operando.\n"
-	    	   "3. Calcular Todas Las Operaciones.\n"
-	    	   "4.Informar Resultados.\n"
-	    	   "5.Salir.\n"
+	    printf("1.Ingrese Primer Operando."
+	    	   "\n2.Ingrese Segundo Operando."
+	    	   "\n3.Calcular Todas Las Operaciones."
+	    	   "\n4.Informar Resultados."
+	    	   "\n5.Salir.\n"
 	    		);
-	    printf("Ingrese una opción: \n");
+	    printf("\nIngrese una opcion: ");
 		scanf("%d",&opcion);
 
 
 	      switch(opcion){
 	          case 1:
-	        	  A = getFloat("Ingrese el Primer Operando: \n");
+	        	  A = getFloat("Ingrese el Primer Operando: ");
 	          break;
 	          case 2:
-	        	  B = getFloat("Ingrese el Segundo Operando: \n");
+	        	  B = getFloat("Ingrese el Segundo Operando: ");
 	          break;
 	          case 3:
+	        	  resultadoSuma = sumarNumeros(A,B);
+	        	  printf("Operaciones Realizadas con Exito.\n\n");
 	          break;
 	          case 4:
+	        	  mostrarResultadoSuma(A,B,resultadoSuma);
 	          break;
 	      }
 
