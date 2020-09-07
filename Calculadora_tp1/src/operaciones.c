@@ -28,51 +28,69 @@ float getFloat(char* mensaje)
 /** \brief Efectua la suma entre dos parametros.
 * \param float X Primer parametro.
 * \param float Y Segundo parametro .
-* \return resultadoSuma retorna el resultado de los dos parametros ingresados(X,Y).
+* \return retorno si la operacion posee errores o no mediante -1/0.
 */
-float sumarNumeros(float X, float Y){
+float sumarNumeros(float X, float Y,float* pResultado){
+	int retorno=-1;
 	float resultadoSuma;
-	resultadoSuma = X + Y;
 
-	return resultadoSuma;
+	if(pResultado!=NULL){
+		resultadoSuma = X+Y;
+		*pResultado = resultadoSuma;
+		retorno=0;
+	}
+	return retorno;
 }
 
 /** \brief Efectua la resta entre dos parametros.
 * \param float X Primer parametro.
 * \param float Y Segundo parametro .
-* \return resultadoResta retorna el resultado de los dos parametros ingresados(X,Y).
+* \return retorno si la operacion posee errores o no mediante -1/0.
 */
-float restarNumeros(float X, float Y){
+float restarNumeros(float X, float Y,float* pResultado){
+	int retorno=-1;
 	float resultadoResta;
-	resultadoResta = X - Y;
 
-	return resultadoResta;
+	if(pResultado!=NULL){
+		resultadoResta = X-Y;
+		*pResultado = resultadoResta;
+		retorno=0;
+	}
+	return retorno;
 }
-
 
 /** \brief Efectua la multiplicación entre dos parametros.
 * \param float X Primer parametro.
 * \param float Y Segundo parametro .
-* \return resultadoMultiplicacion retorna el resultado de los dos parametros ingresados(X,Y).
+* \return retorno si la operacion posee errores o no mediante -1/0.
 */
-float multiplicarNumeros(float X, float Y){
+float multiplicarNumeros(float X, float Y, float* pResultado){
+	int retorno=-1;
 	float resultadoMultiplicacion;
-	resultadoMultiplicacion = X * Y;
 
-	return resultadoMultiplicacion;
+	if(pResultado!=NULL){
+		resultadoMultiplicacion = X*Y;
+		*pResultado = resultadoMultiplicacion;
+		retorno=0;
+	}
+	return retorno;
 }
 
 /** \brief Efectua la división entre dos parametros.
 * \param float X Primer parametro.
 * \param float Y Segundo parametro .
-* \return resultadoDivision retorna el resultado de los dos parametros ingresados(X,Y).
+* \return retorno si la operacion posee errores o no mediante -1/0.
 */
-float dividirNumeros(float X, float Y){
+float dividirNumeros(float X, float Y, float* pResultado){
+	int retorno=-1;
 	float resultadoDivision;
 
-	resultadoDivision = X/Y;
-
-	return resultadoDivision;
+	if (pResultado!=NULL && Y!=0) {
+		resultadoDivision=X/Y;
+		*pResultado=resultadoDivision;
+		retorno=0;
+	}
+	return retorno;
 }
 
 /**

@@ -41,23 +41,28 @@ int main(void) {
 	int opcion;
 	float A;
 	float B;
+
+	int respuestaSuma;
 	float resultadoSuma;
+	int respuestaResta;
 	float resultadoResta;
+	int respuestaMultiplicacion;
 	float resultadoMultiplicacion;
+	int respuestaDivision;
 	float resultadoDivision;
 	int respuestaFactorial;
 	float resultadoFactorialUno;
 	float resultadoFactorialDos;
+
 	do{
-	    printf("\n\n1.Ingrese Primer Operando."
-	    	   "\n2.Ingrese Segundo Operando."
+	    printf("\n\n1.Ingrese Primer Operando.(A = %.2f)"
+	    	   "\n2.Ingrese Segundo Operando.(B = %.2f)"
 	    	   "\n3.Calcular Todas Las Operaciones."
 	    	   "\n4.Informar Resultados."
-	    	   "\n5.Salir.\n"
+	    	   "\n5.Salir.\n" , A, B
 	    		);
 	    printf("\nIngrese una opcion: ");
 		scanf("%d",&opcion);
-
 
 	      switch(opcion){
 	          case 1:
@@ -67,38 +72,42 @@ int main(void) {
 	        	  B = getFloat("Ingrese el Segundo Operando: ");
 	          break;
 	          case 3:
-	        	  resultadoSuma = sumarNumeros(A,B);
-	        	  resultadoResta = restarNumeros(A,B);
-	        	  resultadoMultiplicacion = multiplicarNumeros(A,B);
-	        	  resultadoDivision = dividirNumeros(A,B);
+	        	  respuestaSuma = sumarNumeros(A,B,&resultadoSuma);
+	        	  respuestaResta = restarNumeros(A,B,&resultadoResta);
+	        	  respuestaMultiplicacion = multiplicarNumeros(A,B,&resultadoMultiplicacion);
+	        	  respuestaDivision = dividirNumeros(A,B,&resultadoDivision);
 	        	  respuestaFactorial = factorizarNumeros(A,B,&resultadoFactorialUno,&resultadoFactorialDos);
-
 	        	  printf("Operaciones Realizadas con Exito.\n");
 	          break;
 	          case 4:
-	        	  mostrarResultadoSuma(A,B,resultadoSuma);
-	        	  mostrarResultadoResta(A,B,resultadoResta);
-	        	  mostrarResultadoMultiplicacion(A,B,resultadoMultiplicacion);
+		        	 if(respuestaSuma == 0){
+				        mostrarResultadoSuma(A,B,resultadoSuma);
+		        	 }
 
-	        	  if(B != 0){
-	        		 mostrarResultadoDivisionExito(A,B,resultadoDivision);
-	        	  }
-	        	  else
-	        	  {
-	        		 mostrarResultadoDivisionError();
-	        	  }
+		        	 if(respuestaResta == 0){
+			        	  mostrarResultadoResta(A,B,resultadoResta);
+		        	 }
 
-	        	  if (respuestaFactorial==0)
-	        	 {
-	        	 printf("El factorial de %.2f es: %.2f\n El factorial de %.2f es: %.2f",A,resultadoFactorialUno,B,resultadoFactorialDos);
-	        	 }
+		        	 if(respuestaMultiplicacion == 0){
+			        	mostrarResultadoMultiplicacion(A,B,resultadoMultiplicacion);
+		        	 }
 
+					 if(respuestaDivision == 0){
+						 mostrarResultadoDivisionExito(A,B,resultadoDivision);
+					 }
+					 else
+					 {
+						 mostrarResultadoDivisionError();
+					 }
+
+					 if (respuestaFactorial==0)
+					 {
+					 printf("El factorial de %.2f es: %.2f\n El factorial de %.2f es: %.2f",A,resultadoFactorialUno,B,resultadoFactorialDos);
+					 }
 			 break;
 	      }
 
 	}while(opcion !=5);
-
-
 
 	return EXIT_SUCCESS;
 }
