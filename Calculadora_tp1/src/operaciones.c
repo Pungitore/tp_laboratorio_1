@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/** \brief Solicita al usuario  e inicializa una variable de tipo "float".
+/** \brief Solicita al usuario e inicializa una variable de tipo "float".
 * \param Mensaje impreso al usuario.
 * \return Numero ingresado por el usuario.
 *
@@ -104,7 +104,7 @@ float dividirNumeros(float X, float Y, float* pResultado){
 *  si devuelve un 0 la operacion puede ser realizada con exito y ejecuta el factorial de ambos parametros.
 *
 */
-int factorizarNumeros(float X, float Y, float* pResultado, float* pResultado2)
+int factorialNumeros(float X, float Y, float* pResultado, float* pResultado2)
 {
 	int retorno=-1;
 	float bufferFactorialUno = 1;

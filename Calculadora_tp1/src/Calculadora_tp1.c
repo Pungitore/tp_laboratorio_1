@@ -76,7 +76,7 @@ int main(void) {
 	        	  respuestaResta = restarNumeros(A,B,&resultadoResta);
 	        	  respuestaMultiplicacion = multiplicarNumeros(A,B,&resultadoMultiplicacion);
 	        	  respuestaDivision = dividirNumeros(A,B,&resultadoDivision);
-	        	  respuestaFactorial = factorizarNumeros(A,B,&resultadoFactorialUno,&resultadoFactorialDos);
+	        	  respuestaFactorial = factorialNumeros(A,B,&resultadoFactorialUno,&resultadoFactorialDos);
 	        	  printf("Operaciones Realizadas con Exito.\n");
 	          break;
 	          case 4:
