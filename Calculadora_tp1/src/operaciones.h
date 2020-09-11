@@ -16,12 +16,14 @@
 */
 float getFloat(char* mensaje);
 
+
 /** \brief Efectua la suma entre dos parametros.
 * \param float X Primer parametro.
 * \param float Y Segundo parametro .
 * \return retorno si la operacion posee errores o no mediante -1/0.
 */
 float sumarNumeros(float X, float Y,float* pResultado);
+
 
 /** \brief Efectua la resta entre dos parametros.
 * \param float X Primer parametro.
@@ -30,6 +32,7 @@ float sumarNumeros(float X, float Y,float* pResultado);
 */
 float restarNumeros(float X, float Y,float* pResultado);
 
+
 /** \brief Efectua la multiplicación entre dos parametros.
 * \param float X Primer parametro.
 * \param float Y Segundo parametro .
@@ -37,12 +40,14 @@ float restarNumeros(float X, float Y,float* pResultado);
 */
 float multiplicarNumeros(float X, float Y,float* pResultado);
 
+
 /** \brief Efectua la división entre dos parametros.
 * \param float X Primer parametro.
 * \param float Y Segundo parametro .
 * \return retorno si la operacion posee errores o no mediante -1/0.
 */
 float dividirNumeros(float X, float Y,float* pResultado);
+
 
 /**
 * \brief Evalua que los operandos ingresados por el usuario que sean diferentes a 0  para poder realizar el factorial

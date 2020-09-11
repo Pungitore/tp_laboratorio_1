@@ -12,8 +12,8 @@ void mostrarResultadoSuma(float X ,float Y ,float parametroResultadoSuma){
 	printf("El resultado de la suma entre %.2f y %.2f es: %.2f \n" , X, Y, parametroResultadoSuma);
 }
 
-void mostrarResultadoResta(float X, float Y, float parametroResutadoResta){
-	printf("El resultado de la resta entre %.2f y %.2f es: %.2f \n" , X, Y, parametroResutadoResta);
+void mostrarResultadoResta(float X, float Y, float parametroResultadoResta){
+	printf("El resultado de la resta entre %.2f y %.2f es: %.2f \n" , X, Y, parametroResultadoResta);
 }
 
 void mostrarResultadoMultiplicacion(float X, float Y, float parametroResutadoMultiplicacion){
