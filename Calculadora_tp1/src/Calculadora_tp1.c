@@ -106,7 +106,7 @@ int main(void) {
 
 					 if (respuestaFactorial==0)
 					 {
-					 printf("El factorial de %.2f es: %.2f\n El factorial de %.2f es: %.2f",A,resultadoFactorialUno,B,resultadoFactorialDos);
+						 mostrarResultadosFactoriales(A,B,resultadoFactorialUno,resultadoFactorialDos);
 					 }
 			 break;
 	      }
