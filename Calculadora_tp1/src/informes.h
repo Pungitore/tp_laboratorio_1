@@ -44,8 +44,7 @@ void mostrarResultadoDivisionExito(float X, float Y, float parametroResutadoMult
 */
 void mostrarResultadoDivisionError();
 
-/** \brief Efectua el mensaje del resultado de la operacion division si esta misma da error(Segundo parametro es igual a 0),
-  	 con dichos parametros.
+/** \brief Efectua el mensaje del resultado de las operacioesn factoriaes de los numeros si esta misma no da error.
 * \param float X Primer parametro ,primer numero ingresado por el usuario.
 * \param float Y Segundo parametro, segundo numero ingresado por el usuario.
 * \param float parametroNumeroUno tercer parametro, resultado del factorial del primer numero ingresado efectuado en el programa.
