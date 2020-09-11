@@ -42,15 +42,19 @@ int main(void) {
 	float A;
 	float B;
 
+
+	//Variables en las que se guarda la respuesta de las funciones (En el caso que sea exitoso o haya error).
 	int respuestaSuma;
-	float resultadoSuma;
 	int respuestaResta;
-	float resultadoResta;
 	int respuestaMultiplicacion;
-	float resultadoMultiplicacion;
 	int respuestaDivision;
-	float resultadoDivision;
 	int respuestaFactorial;
+
+	//Variables en las qe se guarda los resultados de las funciones.
+	float resultadoSuma;
+	float resultadoResta;
+	float resultadoMultiplicacion;
+	float resultadoDivision;
 	float resultadoFactorialUno;
 	float resultadoFactorialDos;
 
