@@ -72,7 +72,7 @@ int emp_getEmptyIndex(eEmployee list[], int len)
  * \return Retorna 0 (EXITO) y -1 (ERROR)
  *
  */
-int addEmployees(eEmployee* array,int len, int indice, int* id)
+int emp_addEmployees(eEmployee* array,int len, int indice, int* id)
 {
 	int retorno = -1;
 	eEmployee auxiliar;

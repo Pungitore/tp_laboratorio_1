@@ -41,7 +41,7 @@ int main(void) {
 	        	auxiliarIndiceVacio = emp_getEmptyIndex(arrayEmployees,QTY_EMPLOYEES);
 	        	if(auxiliarIndiceVacio >= 0)
 	        		{
-	        		if(addEmployees(arrayEmployees,QTY_EMPLOYEES,auxiliarIndiceVacio,&idEmployees)==0)
+	        		if(emp_addEmployees(arrayEmployees,QTY_EMPLOYEES,auxiliarIndiceVacio,&idEmployees)==0)
 	        		{
 	        		printf("Carga realizada con exito.\n");
 	        		}
@@ -57,7 +57,7 @@ int main(void) {
 	        		emp_printEmployees(arrayEmployees,QTY_EMPLOYEES);
 	        	}
 	        	else{
-	        		printf("NO HAY EMPLEADOS CARGADOS!!!\n");
+	        		printf("NO HAY EMPLEADOS CARGADOS!!!");
 	        	}
 	        break;
 	        	}
@@ -68,6 +68,5 @@ int main(void) {
 
 	return EXIT_SUCCESS;
 }
-
 
 
