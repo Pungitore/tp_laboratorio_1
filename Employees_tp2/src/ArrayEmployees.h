@@ -22,8 +22,8 @@ typedef struct
 }eEmployee;
 
 int initEmployees(eEmployee list[], int len);
-
-
+int emp_getEmptyIndex(eEmployee list[], int len);
+int addEmployees(eEmployee* array,int len, int indice, int* id);
 
 
 

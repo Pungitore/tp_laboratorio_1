@@ -17,25 +17,45 @@
 
 // \n
 
-#define QTY_EMPLOYEES 1000
+#define QTY_EMPLOYEES 2
 
 int main(void) {
 	setbuf(stdout,NULL);
 
 	eEmployee arrayEmployees[QTY_EMPLOYEES];
 	int opcionMenu;
+	int auxiliarIndiceVacio;
 
+	//Contador ID de Employees
+	int idEmployees = 0;
 
 	 if(initEmployees(arrayEmployees,QTY_EMPLOYEES)==0){
 		 printf("Array inicializado Correctamente.\n");
 	 }
+
 	 do{
 	        opcionMenu = menu();
 
 	        switch(opcionMenu){
-
+	        case 1:
+	        	auxiliarIndiceVacio = emp_getEmptyIndex(arrayEmployees,QTY_EMPLOYEES);
+	        	if(auxiliarIndiceVacio >= 0)
+	        		{
+	        		if(addEmployees(arrayEmployees,QTY_EMPLOYEES,auxiliarIndiceVacio,&idEmployees)==0)
+	        		{
+	        		printf("Carga realizada con exito.\n");
+	        		}
+	        		else
+	        		{
+	        		printf("No hay mas lugares libres!!!\n");
+	        	    }
+	        	}
 	        }
-		    }while(opcionMenu != 120);
+
+
+
+
+	 	 	 }while(opcionMenu != 120);
 
 
 
