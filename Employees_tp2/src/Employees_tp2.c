@@ -17,7 +17,7 @@
 
 // \n
 
-#define QTY_EMPLOYEES 2
+#define QTY_EMPLOYEES 1000
 
 int main(void) {
 	setbuf(stdout,NULL);
@@ -51,7 +51,7 @@ int main(void) {
 	        	    }
 	        	}
 	        }
-
+	        case 2:
 
 
 

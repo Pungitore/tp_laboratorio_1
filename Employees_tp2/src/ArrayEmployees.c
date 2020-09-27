@@ -93,3 +93,28 @@ int addEmployees(eEmployee* array,int len, int indice, int* id)
 	}
 	return retorno;
 }
+
+/**
+ * \brief Cuenta la cantidad de empleados existentes.
+ * \param list Puntero al array de empleados.
+ * \param len Es la longitud del array.
+ * \return Retorna contador Retorna la cantidad de empleados encontrada y -1 si tuvo algún error.
+ *
+ */
+int emp_contadorEmployee(eEmployee list[], int len)
+{
+	int i;
+	int contadorEmpleados = 0;
+
+	if(list != NULL && len > 0)
+	{
+		for(i=0;i<len;i++)
+		{
+			if(list[i].isEmpty == 0)
+			{
+				contadorEmpleados++;
+			}
+		}
+	}
+	return contadorEmpleados;
+}
