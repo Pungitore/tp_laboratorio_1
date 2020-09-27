@@ -118,3 +118,31 @@ int emp_contadorEmployee(eEmployee list[], int len)
 	}
 	return contadorEmpleados;
 }
+
+
+
+
+/** \brief print the content of employees array.
+ * \param list Employee*
+ * \param len int
+ * \return int
+ *
+ */
+int emp_printEmployees(eEmployee list[], int len)
+{
+	int retorno = -1;
+	int i;
+
+	if(list != NULL && len > 0)//Valida que los datos de la funcion sean correctos.
+	{
+		for(i=0;i<len;i++)//Recorre el array para buscar empleados cargados.
+		{
+			if(list[i].isEmpty == 0)//Verifica que el indice se encuentre cargado.
+			{
+				printf("%s, %s - Salario: %.2f - Sector: %d - ID: %d\n",list[i].lastName,list[i].name,list[i].salary,list[i].sector,list[i].id);
+			}
+		}
+		retorno = 0;
+	}
+	return retorno;
+}
