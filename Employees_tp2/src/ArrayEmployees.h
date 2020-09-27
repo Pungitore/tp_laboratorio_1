@@ -21,6 +21,10 @@ typedef struct
 	 int isEmpty;
 }eEmployee;
 
+int initEmployees(eEmployee list[], int len);
+
+
+
 
 
 #endif /* ARRAYEMPLOYEES_H_ */

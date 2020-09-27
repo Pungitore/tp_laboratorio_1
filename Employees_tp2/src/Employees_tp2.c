@@ -25,6 +25,10 @@ int main(void) {
 	eEmployee arrayEmployees[QTY_EMPLOYEES];
 	int opcionMenu;
 
+
+	 if(initEmployees(arrayEmployees,QTY_EMPLOYEES)==0){
+		 printf("Array inicializado Correctamente.\n");
+	 }
 	 do{
 	        opcionMenu = menu();
 
