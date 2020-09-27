@@ -8,18 +8,19 @@
 #ifndef ARRAYEMPLOYEES_H_
 #define ARRAYEMPLOYEES_H_
 
+typedef struct
+{
+	 int id;
+	 char name[51];
+	 char lastName[51];
+	 float salary;
+	 int sector;
+	 int isEmpty;
+}eEmployee;
+
 
 
 #endif /* ARRAYEMPLOYEES_H_ */
 
 
 
-typedef struct
-{
-    int idAlumno; //PK
-    int legajo;
-    char nombre[20];
-    char email[20];
-    int isEmpty;
-    int idCurso; //FK
-}eAlumno;

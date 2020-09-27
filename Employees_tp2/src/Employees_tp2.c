@@ -14,7 +14,16 @@
 #include "utn.h"
 #include "ArrayEmployees.h"
 
+#define QTY_EMPLOYEES 1000
+
 int main(void) {
-	puts("!!!Hello World!!!"); /* prints !!!Hello World!!! */
+	setbuf(stdout,NULL);
+
+	eEmployee arrayEmployees[1000];
+
+
+
+
+
 	return EXIT_SUCCESS;
 }
