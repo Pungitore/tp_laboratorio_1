@@ -13,17 +13,31 @@
 #include <string.h>
 #include "utn.h"
 #include "ArrayEmployees.h"
+#include "menu.h"
+
+// \n
 
 #define QTY_EMPLOYEES 1000
 
 int main(void) {
 	setbuf(stdout,NULL);
 
-	eEmployee arrayEmployees[1000];
+	eEmployee arrayEmployees[QTY_EMPLOYEES];
+	int opcionMenu;
 
+	 do{
+	        opcionMenu = menu();
+
+	        switch(opcionMenu){
+
+	        }
+		    }while(opcionMenu != 120);
 
 
 
 
 	return EXIT_SUCCESS;
 }
+
+
+

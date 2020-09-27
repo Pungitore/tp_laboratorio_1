@@ -8,11 +8,14 @@
 #ifndef ARRAYEMPLOYEES_H_
 #define ARRAYEMPLOYEES_H_
 
+#define QTY_NAME 100
+#define QTY_SURNAME 100
+
 typedef struct
 {
 	 int id;
-	 char name[51];
-	 char lastName[51];
+	 char name[QTY_NAME];
+	 char lastName[QTY_SURNAME];
 	 float salary;
 	 int sector;
 	 int isEmpty;
