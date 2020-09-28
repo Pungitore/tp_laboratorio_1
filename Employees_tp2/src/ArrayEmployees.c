@@ -191,41 +191,72 @@ int emp_modifEmployee(eEmployee list[], int len, int id, int option)
 	int i;
 	eEmployee auxiliarEmpleado;
 
-	if(list != NULL && len > 0 && id > -1 && option > 5 && option < 10)//Valida que los datos de la funcion sean correctos.
+	if(list != NULL && len > 0 && id >= 0 && option > 5 && option < 10)
 	{
-		for(i=0;i<len;i++)//Recorre el array para buscar el ID del empleado a modificar.
+		for(i=0;i<len;i++)
 		{
 			if( list[i].id == id &&
-				list[i].isEmpty == 0)//Busca el id, indicado como dato en la funcion y verifica que este "cargado".
+				list[i].isEmpty == 0)
 			{
-				if( option == 6 && //Modifica el nombre.
+				if( option == 6 &&
 					!utn_getNameOrSurname(auxiliarEmpleado.name,NAME_LEN,"Ingrese un nombre: \n","Nombre invalido.\n",2))
 				{
 					retorno = 0;
-					strncpy(list[i].name,auxiliarEmpleado.name,NAME_LEN);//Copia la informacion pasada en la funcion, al indice obtenido.
+					strncpy(list[i].name,auxiliarEmpleado.name,NAME_LEN);
 					break;
 				}
-				else if( option == 7 && //Modifica el apellido.
+				else if( option == 7 &&
 						 !utn_getNameOrSurname(auxiliarEmpleado.lastName,LASTNAME_LEN,"Ingrese un apellido: \n","Apellido invalido.\n",2))
 				{
 					retorno = 0;
-					strncpy(list[i].lastName,auxiliarEmpleado.lastName,NAME_LEN);//Copia la informacion pasada en la funcion, al indice obtenido.
+					strncpy(list[i].lastName,auxiliarEmpleado.lastName,NAME_LEN);
 					break;
 				}
-				else if( option == 8 && //Modifica el salario.
+				else if( option == 8 &&
 						!utn_getNumberFloat(&auxiliarEmpleado.salary,"Ingrese un salario Limite de 500.000: \n","Salario invalido.\n",0,500000,2))
 				{
 					retorno = 0;
-					list[i].salary = auxiliarEmpleado.salary;//Copia la informacion pasada en la funcion, al indice obtenido.
+					list[i].salary = auxiliarEmpleado.salary;
 					break;
 				}
-				else if(option == 9 && //Modifica el sector.
+				else if(option == 9 &&
 						!utn_getNumberInt(&auxiliarEmpleado.sector,"Ingrese un sector (1 a 5): \n","Sector invalido.\n",1,5,2))
 				{
 					retorno = 0;
-					list[i].sector = auxiliarEmpleado.sector;//Copia la informacion pasada en la funcion, al indice obtenido.
+					list[i].sector = auxiliarEmpleado.sector;
 					break;
 				}
+			}
+		}
+	}
+	return retorno;
+}
+
+
+/** \brief Remove a Employee by Id (put isEmpty Flag in 1)
+*
+* \param list Employee*
+* \param len int
+* \param id int
+* \return int Return (-1) if Error [Invalid length or NULL pointer or if can't
+find a employee] - (0) if Ok
+*
+*/
+int emp_removeEmployee(eEmployee list[], int len, int id)
+{
+	int retorno = -1;
+	int i;
+
+	if(list != NULL && len > 0 && id >= 0)
+	{
+		for(i=0;i<len;i++)
+		{
+			if( list[i].id == id &&
+				list[i].isEmpty == 0)
+			{
+				retorno = 0;
+				list[i].isEmpty = 1;
+				break;
 			}
 		}
 	}

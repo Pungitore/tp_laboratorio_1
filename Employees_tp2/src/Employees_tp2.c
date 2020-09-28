@@ -54,7 +54,7 @@ int main(void) {
 	        	}
 	        break;
 	        case 2:
-	        	if( emp_contadorEmployee(arrayEmployees,QTY_EMPLOYEES) > 0 &&
+	        	if(emp_contadorEmployee(arrayEmployees,QTY_EMPLOYEES) > 0 &&
 	        	   !emp_printEmployees(arrayEmployees,QTY_EMPLOYEES) &&
 	        	  !utn_getNumberInt(&auxiliarId,"Por favor, ingrese el ID del cliente: \n","ID invalido\n",0,idEmployees,2) &&
 	        	  emp_findEmployeeById(arrayEmployees,QTY_EMPLOYEES,auxiliarId) > -1 &&
@@ -72,6 +72,21 @@ int main(void) {
 	        	  printf("NO HAY EMPLEADOS CARGADOS!!!\n");
 	        	}
 	        break;
+	        case 3:
+
+				if( emp_contadorEmployee(arrayEmployees,QTY_EMPLOYEES) > 0 &&
+					!emp_printEmployees(arrayEmployees,QTY_EMPLOYEES) &&
+					!utn_getNumberInt(&auxiliarId,"Ingrese el ID del cliente a dar de baja:\n","ID invalido\n",0,idEmployees,2) &&
+					emp_findEmployeeById(arrayEmployees,QTY_EMPLOYEES,auxiliarId) >= 0 &&
+					!emp_removeEmployee(arrayEmployees,QTY_EMPLOYEES,auxiliarId))
+				{
+					printf("Baja de exitosa.\n");
+				}
+				else
+				{
+					printf("NO HAY EMPLEADOS CARGADOS!!!\n");
+				}
+				break;
 	        	}
 	 	 	 }while(opcionMenu != 5);
 
