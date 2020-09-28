@@ -25,6 +25,8 @@ int main(void) {
 	eEmployee arrayEmployees[QTY_EMPLOYEES];
 	int opcionMenu;
 	int auxiliarIndiceVacio;
+	int auxOpcionDeModificacion;
+	int auxiliarId;
 
 	//Contador ID de Employees
 	int idEmployees = 0;
@@ -52,12 +54,22 @@ int main(void) {
 	        	}
 	        break;
 	        case 2:
-	        	if(emp_contadorEmployee(arrayEmployees,QTY_EMPLOYEES)>0)
+	        	if( emp_contadorEmployee(arrayEmployees,QTY_EMPLOYEES) > 0 &&
+	        	   !emp_printEmployees(arrayEmployees,QTY_EMPLOYEES) &&
+	        	  !utn_getNumberInt(&auxiliarId,"Por favor, ingrese el ID del cliente: \n","ID invalido\n",0,idEmployees,2) &&
+	        	  emp_findEmployeeById(arrayEmployees,QTY_EMPLOYEES,auxiliarId) > -1 &&
+	        	  !utn_getNumberInt(&auxOpcionDeModificacion,"Por favor, ingrese el campo que desea modificar: \n"
+	        													"6.-Nombre.\n"
+	        													"7.-Apellido.\n"
+	        													"8.-Salario.\n"
+	        													"9.-Sector.\n","Opcion invalida.\n",6,9,2) &&
+	        	!emp_modifEmployee(arrayEmployees,QTY_EMPLOYEES,auxiliarId,auxOpcionDeModificacion))
 	        	{
-	        		emp_printEmployees(arrayEmployees,QTY_EMPLOYEES);
+	        		printf("Modificacion de exitosa.\n");
 	        	}
-	        	else{
-	        		printf("NO HAY EMPLEADOS CARGADOS!!!");
+	        	else
+	        	{
+	        	  printf("NO HAY EMPLEADOS CARGADOS!!!\n");
 	        	}
 	        break;
 	        	}
