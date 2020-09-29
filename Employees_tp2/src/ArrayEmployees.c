@@ -119,9 +119,6 @@ int emp_contadorEmployee(eEmployee list[], int len)
 	return contadorEmpleados;
 }
 
-
-
-
 /** \brief print the content of employees array.
  * \param list Employee*
  * \param len int
@@ -133,11 +130,11 @@ int emp_printEmployees(eEmployee list[], int len)
 	int retorno = -1;
 	int i;
 
-	if(list != NULL && len > 0)//Valida que los datos de la funcion sean correctos.
+	if(list != NULL && len > 0)
 	{
-		for(i=0;i<len;i++)//Recorre el array para buscar empleados cargados.
+		for(i=0;i<len;i++)
 		{
-			if(list[i].isEmpty == 0)//Verifica que el indice se encuentre cargado.
+			if(list[i].isEmpty == 0)
 			{
 				printf("%s, %s - Salario: %.2f - Sector: %d - ID: %d\n",list[i].lastName,list[i].name,list[i].salary,list[i].sector,list[i].id);
 			}
@@ -181,7 +178,7 @@ int emp_findEmployeeById(eEmployee list[], int len,int id)
  * \param list Puntero al array de empleados.
  * \param len Es la longitud del array.
  * \param id Identificacion del cliente a modificar.
- * \param option para verificar que campo desea modificar. 6 = Nombre; 7 = Apellido; 8 = Salario; 9 = Sector.
+ * \param option para verificar que campo desea modificar.
  * \return Retorna 0 si modifico los datos del cliente correctamente y -1 si tuvo algún error.
  *
  */
@@ -191,35 +188,35 @@ int emp_modifEmployee(eEmployee list[], int len, int id, int option)
 	int i;
 	eEmployee auxiliarEmpleado;
 
-	if(list != NULL && len > 0 && id >= 0 && option > 5 && option < 10)
+	if(list != NULL && len > 0 && id >= 0 && option > 0 && option < 5)
 	{
 		for(i=0;i<len;i++)
 		{
 			if( list[i].id == id &&
 				list[i].isEmpty == 0)
 			{
-				if( option == 6 &&
+				if( option == 1 &&
 					!utn_getNameOrSurname(auxiliarEmpleado.name,NAME_LEN,"Ingrese un nombre: \n","Nombre invalido.\n",2))
 				{
 					retorno = 0;
 					strncpy(list[i].name,auxiliarEmpleado.name,NAME_LEN);
 					break;
 				}
-				else if( option == 7 &&
+				else if( option == 2 &&
 						 !utn_getNameOrSurname(auxiliarEmpleado.lastName,LASTNAME_LEN,"Ingrese un apellido: \n","Apellido invalido.\n",2))
 				{
 					retorno = 0;
-					strncpy(list[i].lastName,auxiliarEmpleado.lastName,NAME_LEN);
+					strncpy(list[i].lastName,auxiliarEmpleado.lastName,LASTNAME_LEN);
 					break;
 				}
-				else if( option == 8 &&
+				else if( option == 3 &&
 						!utn_getNumberFloat(&auxiliarEmpleado.salary,"Ingrese un salario Limite de 500.000: \n","Salario invalido.\n",0,500000,2))
 				{
 					retorno = 0;
 					list[i].salary = auxiliarEmpleado.salary;
 					break;
 				}
-				else if(option == 9 &&
+				else if(option == 4 &&
 						!utn_getNumberInt(&auxiliarEmpleado.sector,"Ingrese un sector (1 a 5): \n","Sector invalido.\n",1,5,2))
 				{
 					retorno = 0;

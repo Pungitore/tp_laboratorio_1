@@ -17,7 +17,8 @@
       printf("2.Modificar un Empleado.\n");
       printf("3.Dar de baja un Empleado.\n");
       printf("4.Informes.\n");
-
+      printf("5.Salir.\n");
       scanf("%d",&opcion);
-    return opcion;
+
+      return opcion;
 }
