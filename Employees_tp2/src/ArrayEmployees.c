@@ -192,7 +192,7 @@ int emp_removeEmployee(eEmployee list[], int len, int id)
 	return retorno;
 }
 
-int info_totalAndAverageSalaryEmployees(eEmployee list[], int len)
+int emp_totalSalariosYCantidadQueLoSupera(eEmployee list[], int len)
 {
 	int retorno = -1;
 	int i;
@@ -235,4 +235,17 @@ int info_totalAndAverageSalaryEmployees(eEmployee list[], int len)
 	printf("El total de los salarios es: %.2f - Y el promedio de los mismos es: %.2f\n",acumuladorSalarios,promedioSalarios);
 	printf("La cantidad de empleados que superan el salario promedio es: %d\n",contadorEmpleadosSalarioSuperior);
 	return retorno;
+}
+
+
+/** \brief Sort the elements in the array of employees, LastName and Sector
+ * \param list Employee*
+ * \param len int
+ * \param order int [1] indicate UP - [2] indicate DOWN
+ * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
+ *
+ */
+int info_sortEmployees(eEmployee list[], int len, int order)
+{
+
 }
