@@ -96,12 +96,13 @@ int main(void) {
 	        	{
 	        	if(auxiliarDeInformes == 10)
 	        	{
-
+	        		emp_sortEmployees(arrayEmployees,QTY_EMPLOYEES);
+	        		emp_printEmployees(arrayEmployees,QTY_EMPLOYEES);
 	        	}
 	        	else {
 	        		if(auxiliarDeInformes == 11)
 	        		{
-	        			info_totalAndAverageSalaryEmployees(arrayEmployees,QTY_EMPLOYEES);
+	        			emp_totalSalariosYCantidadQueLoSupera(arrayEmployees,QTY_EMPLOYEES);
 	        		}
 	        	}
 	        	}

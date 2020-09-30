@@ -96,7 +96,7 @@ int emp_printEmployees(eEmployee list[], int len)
 		{
 			if(list[i].isEmpty == 0)
 			{
-				printf("%s, %s - Salario: %.2f - Sector: %d - ID: %d\n",list[i].lastName,list[i].name,list[i].salary,list[i].sector,list[i].id);
+				printf("%s, %s - Salario: %.2f - Sector: %d - ID: %d\n\n",list[i].lastName,list[i].name,list[i].salary,list[i].sector,list[i].id);
 			}
 		}
 		retorno = 0;
@@ -232,7 +232,7 @@ int emp_totalSalariosYCantidadQueLoSupera(eEmployee list[], int len)
 		retorno = 0;
 	}
 
-	printf("El total de los salarios es: %.2f - Y el promedio de los mismos es: %.2f\n",acumuladorSalarios,promedioSalarios);
+	printf("El total de los salarios es: %.2f - El salario promedio es: %.2f\n",acumuladorSalarios,promedioSalarios);
 	printf("La cantidad de empleados que superan el salario promedio es: %d\n",contadorEmpleadosSalarioSuperior);
 	return retorno;
 }
@@ -245,7 +245,31 @@ int emp_totalSalariosYCantidadQueLoSupera(eEmployee list[], int len)
  * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
  *
  */
-int info_sortEmployees(eEmployee list[], int len, int order)
+void emp_sortEmployees(eEmployee list[], int len)
 {
+	int swap;
+	int i;
+	eEmployee auxiliar;
+	int auxiliarCmp;
 
+	if(list!=NULL && len>0)
+	{
+		do{
+			swap = 0;
+			for(i=0;i<len-1;i++)
+			{
+				auxiliarCmp = strncmp(list[i].lastName,list[i+1].lastName,LASTNAME_LEN);
+				if(auxiliarCmp > 0 || (auxiliarCmp == 0 && list[i].sector > list[i+1].sector))
+				{
+					swap = 1;
+					auxiliar = list[i];
+					list[i] = list[i+1];
+					list[i+1]=auxiliar;
+				}
+			}
+			len--;
+		}while(swap);
+
+		printf("Lista de empleados ordenada por Apellido y Sector.\n\n");
+	}
 }

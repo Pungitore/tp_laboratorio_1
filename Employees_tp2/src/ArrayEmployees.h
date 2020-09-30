@@ -118,7 +118,7 @@ int emp_totalSalariosYCantidadQueLoSupera(eEmployee list[], int len);
  * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
  *
  */
-int info_sortEmployees(eEmployee list[], int len, int order);
+void emp_sortEmployees(eEmployee list[], int len);
 
 
 #endif /* ARRAYEMPLOYEES_H_ */
