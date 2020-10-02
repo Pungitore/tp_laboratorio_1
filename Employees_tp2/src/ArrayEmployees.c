@@ -11,7 +11,7 @@
 #include "utn.h"
 #include "ArrayEmployees.h"
 
-int initEmployees(eEmployee list[], int len)
+int emp_initEmployees(eEmployee list[], int len)
 {
 	int retorno = -1;
 	int i;
@@ -151,13 +151,13 @@ int emp_modifEmployee(eEmployee list[], int len, int id, int option)
 						}
 				break;
 				case 8:
-					 if(!utn_getNumberFloat(&auxiliarEmpleado.salary,"Ingrese un salario(Hasta 250.000): \n","Salario invalido.\n",0,500000,2))
+					 if(!utn_getNumberFloat(&auxiliarEmpleado.salary,"Ingrese un salario(Hasta 250.000): \n","Salario invalido.\n",0,250000,2))
 						{
 						   list[i].salary = auxiliarEmpleado.salary;
 						}
 				break;
 				case 9:
-					if(!utn_getNumberInt(&auxiliarEmpleado.sector,"Ingrese un sector de 1 a 10: \n","Sector invalido.\n",1,5,2))
+					if(!utn_getNumberInt(&auxiliarEmpleado.sector,"Ingrese un sector de 1 a 10: \n","Sector invalido.\n",1,10,2))
 				{
 					list[i].sector = auxiliarEmpleado.sector;
 				}
@@ -220,7 +220,7 @@ void emp_sortEmployees(eEmployee list[], int len)
 	}
 }
 
-int emp_totalSalariosYCantidadQueLoSupera(eEmployee list[], int len)
+int emp_informesSalarios(eEmployee list[], int len)
 {
 	int retorno = -1;
 	int i;
@@ -261,7 +261,7 @@ int emp_totalSalariosYCantidadQueLoSupera(eEmployee list[], int len)
 	}
 
 	printf("El total del salario de todos los empleados: %.2f - El promedio del total de salarios es: %.2f\n",acumuladorSalarios,promedioSalarios);
-	printf("La cantidad de empleados que superan el salario promedio es: %d\n",contadorEmpleadosSalarioSuperior);
+	printf("La cantidad de empleados que superan el salario promedio es: %d\n\n",contadorEmpleadosSalarioSuperior);
 	return retorno;
 }
 

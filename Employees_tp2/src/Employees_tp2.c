@@ -23,20 +23,25 @@ int main(void) {
 	setbuf(stdout,NULL);
 
 	eEmployee arrayEmployees[QTY_EMPLOYEES];
+
+	//Variable que guarda la opcion del menu elegida por el usuario.
 	int opcionMenu;
+
+	//Variables auxiliares que nos permiten guardar los datos ingresados por el usuario.
 	int auxiliarIndiceVacio;
 	int auxliarModificacionDeEmpleados;
 	int auxiliarId;
 	int auxiliarDeInformes;
 
-	//Contador ID de Employees
+	//Contador ID de Employees.
 	int idEmployees;
 	idEmployees = 0;
 
-	 if(initEmployees(arrayEmployees,QTY_EMPLOYEES)==0){
-		 printf("Array inicializado Correctamente.\n");
-	 }
 
+	if(emp_initEmployees(arrayEmployees,QTY_EMPLOYEES)==0)
+	{
+		printf("Array de Empleados Inicializado Correctamente.\n");
+	}
 	 do{
 	        opcionMenu = menu();
 
@@ -94,15 +99,15 @@ int main(void) {
 	        				        							  "10.Listado de los empleados ordenados alfabéticamente por Apellido y Sector.\n"
 	        				        							  "11.Listado del total de los salarios y los empleados que superan este promedio.\n","Opcion Invalida!",10,11,5))
 	        	{
-	        	if(auxiliarDeInformes == 1)
+	        	if(auxiliarDeInformes == 10)
 	        	{
 	        		emp_sortEmployees(arrayEmployees,QTY_EMPLOYEES);
 	        		emp_printEmployees(arrayEmployees,QTY_EMPLOYEES);
 	        	}
 	        	else {
-	        		if(auxiliarDeInformes == 2)
+	        		if(auxiliarDeInformes == 11)
 	        		{
-	        			emp_totalSalariosYCantidadQueLoSupera(arrayEmployees,QTY_EMPLOYEES);
+	        			emp_informesSalarios(arrayEmployees,QTY_EMPLOYEES);
 	        		}
 	        	}
 	        	}

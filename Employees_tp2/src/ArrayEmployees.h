@@ -31,7 +31,7 @@ typedef struct
  * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
  *
  */
-int initEmployees(eEmployee list[], int len);
+int emp_initEmployees(eEmployee list[], int len);
 
 
 /**
@@ -86,7 +86,7 @@ int emp_findEmployeeById(eEmployee list[], int len,int id);
  * \param list Puntero al array de empleados.
  * \param len Es la longitud del array.
  * \param id Identificacion del cliente a modificar.
- * \param option para verificar que campo desea modificar. 6= NOMBRE , 7= APELLIDO , 8 = SALARIO , 9 = SECTOR
+ * \param option para verificar la opcion del usuario a modificar. 6= NOMBRE , 7= APELLIDO , 8 = SALARIO , 9 = SECTOR
  * \return Retorna 0 si modifico los datos del cliente correctamente y -1 si tuvo algún error.
  *
  */
@@ -109,7 +109,7 @@ int emp_removeEmployee(eEmployee list[], int len, int id);
  * \return int Return 0 si pudo obtener correctamente la informacion y -1 si tuvo algun error.
  *
  */
-int emp_totalSalariosYCantidadQueLoSupera(eEmployee list[], int len);
+int emp_informesSalarios(eEmployee list[], int len);
 
 /** \brief Sort the elements in the array of employees, LastName and Sector
  * \param list Employee*
