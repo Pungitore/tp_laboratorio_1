@@ -130,41 +130,40 @@ int emp_modifEmployee(eEmployee list[], int len, int id, int option)
 	int i;
 	eEmployee auxiliarEmpleado;
 
-	if(list != NULL && len > 0 && id >= 0 && option > 5 && option < 10)
+	if(list != NULL && len > 0)
 	{
 		for(i=0;i<len;i++)
 		{
 			if( list[i].id == id &&
 				list[i].isEmpty == 0)
 			{
-				if( option == 6 &&
-					!utn_getNameOrSurname(auxiliarEmpleado.name,NAME_LEN,"Ingrese un nombre: \n","Nombre invalido.\n",2))
+				switch(option){
+				case 6:
+					if(!utn_getNameOrSurname(auxiliarEmpleado.name,NAME_LEN,"Ingrese un nombre: \n","Nombre invalido.\n",2))
+						{
+							strncpy(list[i].name,auxiliarEmpleado.name,NAME_LEN);
+						}
+				break;
+				case 7:
+					if(!utn_getNameOrSurname(auxiliarEmpleado.lastName,LASTNAME_LEN,"Ingrese un apellido: \n","Apellido invalido.\n",2))
+						{
+						  strncpy(list[i].lastName,auxiliarEmpleado.lastName,LASTNAME_LEN);
+						}
+				break;
+				case 8:
+					 if(!utn_getNumberFloat(&auxiliarEmpleado.salary,"Ingrese un salario(Hasta 250.000): \n","Salario invalido.\n",0,500000,2))
+						{
+						   list[i].salary = auxiliarEmpleado.salary;
+						}
+				break;
+				case 9:
+					if(!utn_getNumberInt(&auxiliarEmpleado.sector,"Ingrese un sector de 1 a 10: \n","Sector invalido.\n",1,5,2))
 				{
-					retorno = 0;
-					strncpy(list[i].name,auxiliarEmpleado.name,NAME_LEN);
-					break;
-				}
-				else if( option == 7 &&
-						 !utn_getNameOrSurname(auxiliarEmpleado.lastName,LASTNAME_LEN,"Ingrese un apellido: \n","Apellido invalido.\n",2))
-				{
-					retorno = 0;
-					strncpy(list[i].lastName,auxiliarEmpleado.lastName,LASTNAME_LEN);
-					break;
-				}
-				else if( option == 8 &&
-						!utn_getNumberFloat(&auxiliarEmpleado.salary,"Ingrese un salario(Hasta 250.000): \n","Salario invalido.\n",0,500000,2))
-				{
-					retorno = 0;
-					list[i].salary = auxiliarEmpleado.salary;
-					break;
-				}
-				else if(option == 9 &&
-						!utn_getNumberInt(&auxiliarEmpleado.sector,"Ingrese un sector de 1 a 10: \n","Sector invalido.\n",1,5,2))
-				{
-					retorno = 0;
 					list[i].sector = auxiliarEmpleado.sector;
-					break;
 				}
+				break;
+				}
+				retorno = 0;
 			}
 		}
 	}
@@ -190,6 +189,35 @@ int emp_removeEmployee(eEmployee list[], int len, int id)
 		}
 	}
 	return retorno;
+}
+
+void emp_sortEmployees(eEmployee list[], int len)
+{
+	int swap;
+	int i;
+	eEmployee auxiliar;
+	int auxiliarCmpEmpleados;
+
+	if(list!=NULL && len>0)
+	{
+		do{
+			swap = 0;
+			for(i=0;i<len-1;i++)
+			{
+				auxiliarCmpEmpleados = strncmp(list[i].lastName,list[i+1].lastName,LASTNAME_LEN);
+				if(auxiliarCmpEmpleados > 0 || (auxiliarCmpEmpleados == 0 && list[i].sector > list[i+1].sector))
+				{
+					swap = 1;
+					auxiliar = list[i];
+					list[i] = list[i+1];
+					list[i+1]=auxiliar;
+				}
+			}
+			len--;
+		}while(swap);
+
+		printf("Lista de empleados ordenada por Apellido y Sector.\n");
+	}
 }
 
 int emp_totalSalariosYCantidadQueLoSupera(eEmployee list[], int len)
@@ -232,44 +260,10 @@ int emp_totalSalariosYCantidadQueLoSupera(eEmployee list[], int len)
 		retorno = 0;
 	}
 
-	printf("El total de los salarios es: %.2f - El salario promedio es: %.2f\n",acumuladorSalarios,promedioSalarios);
+	printf("El total del salario de todos los empleados: %.2f - El promedio del total de salarios es: %.2f\n",acumuladorSalarios,promedioSalarios);
 	printf("La cantidad de empleados que superan el salario promedio es: %d\n",contadorEmpleadosSalarioSuperior);
 	return retorno;
 }
 
 
-/** \brief Sort the elements in the array of employees, LastName and Sector
- * \param list Employee*
- * \param len int
- * \param order int [1] indicate UP - [2] indicate DOWN
- * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
- *
- */
-void emp_sortEmployees(eEmployee list[], int len)
-{
-	int swap;
-	int i;
-	eEmployee auxiliar;
-	int auxiliarCmp;
 
-	if(list!=NULL && len>0)
-	{
-		do{
-			swap = 0;
-			for(i=0;i<len-1;i++)
-			{
-				auxiliarCmp = strncmp(list[i].lastName,list[i+1].lastName,LASTNAME_LEN);
-				if(auxiliarCmp > 0 || (auxiliarCmp == 0 && list[i].sector > list[i+1].sector))
-				{
-					swap = 1;
-					auxiliar = list[i];
-					list[i] = list[i+1];
-					list[i+1]=auxiliar;
-				}
-			}
-			len--;
-		}while(swap);
-
-		printf("Lista de empleados ordenada por Apellido y Sector.\n\n");
-	}
-}

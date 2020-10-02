@@ -47,11 +47,11 @@ int main(void) {
 	        		{
 	        		if(emp_addEmployees(arrayEmployees,QTY_EMPLOYEES,auxiliarIndiceVacio,&idEmployees)==0)
 	        		{
-	        		printf("Carga realizada con exito.\n");
+	        		printf("Carga realizada con exito de empleado.\n");
 	        		}
 	        		else
 	        		{
-	        		printf("No hay mas lugares libres!!!\n");
+	        		printf("NO HAY MAS LUGARES LIBRES!!!\n");
 	        	    }
 	        	}
 	        break;
@@ -64,10 +64,10 @@ int main(void) {
 	        													"6.Modificar Nombre.\n"
 	        													"7.Modificar Apellido.\n"
 	        													"8.Modificar Salario.\n"
-	        													"9.Modificar Sector.\n","Opcion invalida.\n",6,9,5) &&
+	        													"9.Modificar Sector.\n","Campo Invalido!\n",6,9,5) &&
 	        	!emp_modifEmployee(arrayEmployees,QTY_EMPLOYEES,auxiliarId,auxliarModificacionDeEmpleados))
 	        	{
-	        		printf("Modificacion exitosa.\n");
+	        		printf("Modificacion de empleado exitosa.\n");
 	        	}
 	        	else
 	        	{
@@ -77,7 +77,7 @@ int main(void) {
 	        case 3:
 				if(	emp_contadorEmployee(arrayEmployees,QTY_EMPLOYEES) > 0 &&
 					!emp_printEmployees(arrayEmployees,QTY_EMPLOYEES) &&
-					!utn_getNumberInt(&auxiliarId,"Ingrese el ID del empleado a dar de baja:\n","ID INVALIDO!!!\n",0,idEmployees,5) &&
+					!utn_getNumberInt(&auxiliarId,"Ingrese el ID del empleado a dar de baja:\n","ID Invalido!\n",0,idEmployees,5) &&
 					emp_findEmployeeById(arrayEmployees,QTY_EMPLOYEES,auxiliarId) > -1 &&
 					!emp_removeEmployee(arrayEmployees,QTY_EMPLOYEES,auxiliarId))
 				{
@@ -94,13 +94,13 @@ int main(void) {
 	        				        							  "10.Listado de los empleados ordenados alfabéticamente por Apellido y Sector.\n"
 	        				        							  "11.Listado del total de los salarios y los empleados que superan este promedio.\n","Opcion Invalida!",10,11,5))
 	        	{
-	        	if(auxiliarDeInformes == 10)
+	        	if(auxiliarDeInformes == 1)
 	        	{
 	        		emp_sortEmployees(arrayEmployees,QTY_EMPLOYEES);
 	        		emp_printEmployees(arrayEmployees,QTY_EMPLOYEES);
 	        	}
 	        	else {
-	        		if(auxiliarDeInformes == 11)
+	        		if(auxiliarDeInformes == 2)
 	        		{
 	        			emp_totalSalariosYCantidadQueLoSupera(arrayEmployees,QTY_EMPLOYEES);
 	        		}

@@ -114,7 +114,7 @@ int emp_totalSalariosYCantidadQueLoSupera(eEmployee list[], int len);
 /** \brief Sort the elements in the array of employees, LastName and Sector
  * \param list Employee*
  * \param len int
- * \param order int [1] indicate UP - [2] indicate DOWN
+ * \param order ordenamiento apellido y sector
  * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
  *
  */
